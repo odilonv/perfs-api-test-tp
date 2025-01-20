@@ -37,14 +37,14 @@ describe('API Performance Tests', () => {
   describe('GET /auth', () => {
     it('should return 200 and valid JSON response', async () => {
       await executeLoadTest(() => testGetRequest('/auth'), testDuration, usersCount, responseDurations);
-    }, testDuration + 10000);
+    }, testDuration);
   });
 
   // GET /contacts test
   describe('GET /contacts', () => {
     it('should return 200 and valid JSON response', async () => {
       await executeLoadTest(() => testGetRequest('/contacts'), testDuration, usersCount, responseDurations);
-    }, testDuration + 10000);
+    }, testDuration);
   });
 
   // POST /feedback test
@@ -62,7 +62,7 @@ describe('API Performance Tests', () => {
         // Store the feedback ID to use in the DELETE test
         feedbackId = response.body.id;
       }, testDuration, usersCount, responseDurations);
-    }, testDuration + 10000);
+    }, testDuration);
   });
 
   // DELETE /feedback/:id test
@@ -77,7 +77,7 @@ describe('API Performance Tests', () => {
         // Expect either 404 or 403
         expect([404, 403]).toContain(response.status);
       }, testDuration, usersCount, responseDurations);
-    }, testDuration + 10000);
+    }, testDuration);
 
     it('should delete feedback and return 200', async () => {
       if (!feedbackId) {
@@ -90,7 +90,7 @@ describe('API Performance Tests', () => {
           .set('authorization', sessionToken);
         expect(response.status).toBe(200);
       }, testDuration, usersCount, responseDurations);
-    }, testDuration + 10000);
+    }, testDuration);
   });
 
   // GET /feedback test
@@ -103,7 +103,7 @@ describe('API Performance Tests', () => {
         expect(response.status).toBe(200);
         expect(Array.isArray(response.body)).toBe(true);
       }, testDuration, usersCount, responseDurations);
-    }, testDuration + 10000);
+    }, testDuration);
   });
 
   // POST /contact test
@@ -127,7 +127,7 @@ describe('API Performance Tests', () => {
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty('id');
       }, testDuration, usersCount, responseDurations);
-    }, testDuration + 10000);
+    }, testDuration);
   });
 
   // DELETE /contact/:id test
