@@ -91,14 +91,14 @@ Les tests ont été réalisés en simulant différentes charges d'utilisateurs. 
 Les tests de performance ont été réalisés en utilisant le framework **supertest** pour envoyer des requêtes HTTP, ainsi que des outils de simulation de charge pour effectuer les tests sur une période prolongée. Pour exécuter les tests localement, suivez les étapes suivantes :
 
 1. **Installer les dépendances** :
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 2. Exécuter les tests :
-  ```bash
-  npm run test:performance
-   ```
+```bash
+npm run test-api
+```
   
 ---
 
