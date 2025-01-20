@@ -97,8 +97,6 @@ Les tests de performance ont été réalisés en utilisant le framework **supert
 
 2. Exécuter les tests :
   ```bash
-  Copier
-  Modifier
   npm run test:performance
    ```
   
